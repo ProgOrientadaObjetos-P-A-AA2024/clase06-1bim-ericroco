@@ -11,22 +11,27 @@ import java.util.ArrayList;
  * @author reroes
  */
 public class Venta {
-    private double valorVenta;
-    private ArrayList<Computador> computadoras; 
 
-    public double getValorVenta() {
+    private double valorVenta;
+    private ArrayList<Computador> computadoras;
+
+    public double obtenerValorVenta() {
+        valorVenta = 0;
+        for (int i = 0; i < computadoras.size(); i++) {
+            valorVenta = valorVenta + computadoras.get(i).getCostoComputador();
+        }
         return valorVenta;
     }
 
-    public void setValorVenta(double valorVenta) {
+    public void establecerValorVenta(double valorVenta) {
         this.valorVenta = valorVenta;
     }
 
-    public ArrayList<Computador> getComputadoras() {
+    public ArrayList<Computador> obtenerComputadoras() {
         return computadoras;
     }
 
-    public void setComputadoras(ArrayList<Computador> computadoras) {
+    public void establecerComputadoras(ArrayList<Computador> computadoras) {
         this.computadoras = computadoras;
     }
 
