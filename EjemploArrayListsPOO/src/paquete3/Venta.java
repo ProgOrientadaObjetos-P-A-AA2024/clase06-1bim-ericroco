@@ -15,24 +15,34 @@ public class Venta {
     private double valorVenta;
     private ArrayList<Computador> computadoras;
 
+    public Venta(ArrayList<Computador> c) {
+        computadoras = c;
+    }
+
     public double obtenerValorVenta() {
-        valorVenta = 0;
-        for (int i = 0; i < computadoras.size(); i++) {
-            valorVenta = valorVenta + computadoras.get(i).getCostoComputador();
-        }
+
         return valorVenta;
     }
 
-    public void establecerValorVenta(double valorVenta) {
-        this.valorVenta = valorVenta;
+    public void establecerValorVenta(double valorV) {
+        valorVenta = 0;
+        for (int i = 0; i < computadoras.size(); i++) {
+            valorVenta = valorVenta + computadoras.get(i).obtenerCostoComputador();
+        }
+
     }
 
     public ArrayList<Computador> obtenerComputadoras() {
         return computadoras;
     }
 
-    public void establecerComputadoras(ArrayList<Computador> computadoras) {
-        this.computadoras = computadoras;
+    public void establecerComputadoras(ArrayList<Computador> compu) {
+        computadoras = compu;
     }
 
+    @Override
+    public String toString() {
+        String cadena = String.format("Valor de la venta: %s\n", valorVenta);
+        return cadena;
+    }
 }

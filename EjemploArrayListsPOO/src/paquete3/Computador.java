@@ -4,7 +4,6 @@
  */
 package paquete3;
 
-
 /**
  *
  * @author reroes
@@ -16,39 +15,55 @@ public class Computador {
     private Memoria memoria;
     private double costoComputador;
 
-    public Computador(String m,Memoria mem,Procesador pro, double c) {
+    public Computador(String m, Memoria mem, Procesador pro) {
         marca = m;
         memoria = mem;
         procesador = pro;
-        costoComputador = c;
     }
 
-    public String getMarca() {
+    public String obtenerMarca() {
         return marca;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void establecerMarca(String ma) {
+        marca = ma;
     }
 
-    public Procesador getProcesador() {
+    public Procesador obtenerProcesador() {
         return procesador;
     }
 
-    public void setProcesador(Procesador procesador) {
-        this.procesador = procesador;
+    public void establecerProcesador(Procesador pro) {
+        procesador = pro;
     }
 
-    public Memoria getMemoria() {
+    public Memoria obtenerMemoria() {
         return memoria;
     }
 
-    public void setMemoria(Memoria memoria) {
-        this.memoria = memoria;
+    public void establecerMemoria(Memoria mem) {
+        memoria = mem;
     }
 
-    public double getCostoComputador() {
+    public void establecerCostoComputador() {
+        costoComputador = memoria.obtenerCosto() + procesador.obtenerCosto();
+
+    }
+
+    public double obtenerCostoComputador() {
         return costoComputador;
     }
 
+    @Override
+    public String toString() {
+        String cadena = String.format("Marca Computadora: %s\n"
+                + "Marca Memoria: %s\nMarca Procesador: %s\nCosto Memoria: %.2f"
+                + "\nCosto Procesador: %.2f\nCosto Computador: %.2f\n"
+                ,obtenerMarca(),obtenerMemoria().obtenerMarca()
+                ,obtenerProcesador().obtenerMarca()
+                ,obtenerMemoria().obtenerCosto()
+                ,obtenerProcesador().obtenerCosto()
+                ,obtenerCostoComputador());
+        return cadena;
+    }
 }
