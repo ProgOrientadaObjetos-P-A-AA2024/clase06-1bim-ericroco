@@ -10,8 +10,8 @@ package paquete4;
  * @author reroes
  */
 public class Empresa {
-    String nombre;
-    String ciudad;
+     private String nombre;
+     private String ciudad;
     
     public Empresa(String n, String c){
         nombre = n;

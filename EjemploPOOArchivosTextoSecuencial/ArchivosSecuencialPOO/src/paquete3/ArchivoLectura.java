@@ -81,6 +81,8 @@ public class ArchivoLectura {
                 ArrayList<String> cadenaProfesor = new ArrayList<>(
                         Arrays.asList(profesor.split("\\|")));
                 // ["Tara Hernandez", "contratado"]
+                // cuando se utiliza un separador diferente a / o a ; se usa
+                // un dos \\ para determinar el nuevo separador
                 //        0                 1
 
                 Profesor p = new Profesor(cadenaProfesor.get(0),
