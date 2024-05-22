@@ -53,6 +53,8 @@ public class ArchivoEscritura {
     }
 
     // agrega registros al archivo
+    
+    
     public void establecerSalida() {
         try {
             salidaArchivo = new Formatter(new FileWriter(rutaArchivo, true));
